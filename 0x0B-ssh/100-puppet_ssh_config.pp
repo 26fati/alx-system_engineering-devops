@@ -54,7 +54,7 @@ Host *
     HashKnownHosts yes
     GSSAPIAuthentication yes
 '
-file { 'change file'
+file { 'change file':
 ensure => 'file',
 path => '/etc/ssh/ssh_config',
 content => $content,
