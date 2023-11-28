@@ -16,3 +16,13 @@ file { '/var/www/html/index.html':
     ensure => 'file',
     content => 'Hello World!',
 }
+
+file_line {'configure redirection':
+    path  =>  '/etc/nginx/sites-available/default',
+    after =>  'server_name _;',
+    line  =>  '        rewrite ^/redirect_me https://www.youtube.com/ permanent;',
+}
+
+service { 'nginx':
+  ensure => running,
+}
