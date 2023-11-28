@@ -4,11 +4,11 @@ apt-get update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 echo "Hello World!" > /var/www/html/index.html
-sed -i '47i\        rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
+sed -i '47i\        rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-enabled/default
 echo "Ceci n'est pas une page" > /var/www/html/404.html
-sed -i '23i\        error_page 404 /404.html;' /etc/nginx/sites-available/default
-sed -i '24i\        location = /404.html {' /etc/nginx/sites-available/default
-sed -i '25i\                root /var/www/html;' /etc/nginx/sites-available/default
-sed -i '26i\                internal;' /etc/nginx/sites-available/default
-sed -i '27i\        }' /etc/nginx/sites-available/default
+sed -i '23i\        error_page 404 /404.html;' /etc/nginx/sites-enabled/default
+sed -i '24i\        location = /404.html {' /etc/nginx/sites-enabled/default
+sed -i '25i\                root /var/www/html;' /etc/nginx/sites-enabled/default
+sed -i '26i\                internal;' /etc/nginx/sites-enabled/default
+sed -i '27i\        }' /etc/nginx/sites-enabled/default
 service nginx restart
