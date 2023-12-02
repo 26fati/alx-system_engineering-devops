@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+sed -i '5i\Listen 8080' /etc/apache2/ports.conf
 sudo service apache2 start
