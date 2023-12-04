@@ -6,8 +6,7 @@
 # Install and configure HAproxy on my lb-01 server.
 apt-get update
 apt-get -y install haproxy
-config =\ 
-"
+config="
 frontend fatimazohra-frontend
         bind *:80
         mode http
