@@ -6,7 +6,7 @@ exec {'update':
   ensure => 'present',
 }
 -> exec { 'insert_header_line':
-  command => "sed -i '56i\\tadd_header X-Served-By \$hostname;' /etc/nginx/sites-enabled/default",
+  command => "sed -i '47i\        add_header X-Served-By \$hostname;' /etc/nginx/sites-enabled/default",
   path    => ['/bin', '/usr/bin'],
 }
 -> exec {'run':
