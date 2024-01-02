@@ -19,5 +19,5 @@ if __name__ == '__main__':
         rows = [{"task": row.get('title'), "completed": row.get('completed'),
                  "username": username} for row in todos_data]
         dic = {arg: rows}
-        with open("USER_ID.json", "w") as file:
+        with open(f"{arg}.json", "w") as file:
             json.dump(dic, file)
