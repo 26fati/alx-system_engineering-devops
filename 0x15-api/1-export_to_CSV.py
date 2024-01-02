@@ -19,6 +19,6 @@ if __name__ == '__main__':
     rows = [[row.get('userId'), username,
              row.get('completed'), row.get('title')]
             for row in todos_data]
-    with open('USER_ID.csv', 'w') as file:
+    with open(f'{arg}.csv', 'w') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         writer.writerows(rows)
