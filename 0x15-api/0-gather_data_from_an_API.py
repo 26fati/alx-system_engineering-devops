@@ -16,11 +16,12 @@ if __name__ == '__main__':
     user_data = response1.json()
     todos_data = response.json()
     number = 0
-    titles = ""
+    titles = []
     for row in todos_data:
         if row.get("completed"):
             number += 1
-            titles = titles + row.get('title') + "\n\t "
+            titles.append(row.get('title'))
     print(f"Employee {user_data.get('name')} "
           f"is done with tasks({number}/{len(todos_data)}):")
-    print(f"\t {titles}")
+    for title in titles:
+        print(f"\t {title}")
