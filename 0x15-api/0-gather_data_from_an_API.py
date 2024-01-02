@@ -21,6 +21,6 @@ if __name__ == '__main__':
         if row.get("completed"):
             number += 1
             titles = titles + row.get('title') + "\n\t "
-    print(f"Employee {user_data.get('name')} \
-          is done with tasks({number}/{len(todos_data)}):")
+    print(f"Employee {user_data.get('name')} "
+          f"is done with tasks({number}/{len(todos_data)}):")
     print(f"\t {titles}")
